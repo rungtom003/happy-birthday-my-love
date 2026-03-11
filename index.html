@@ -21,8 +21,28 @@
             font-family: 'Kanit', sans-serif;
             background: linear-gradient(135deg, #ffe4e6 0%, #fbcfe8 100%);
             min-height: 100vh;
-            overflow: hidden;
-            /* ป้องกันการเลื่อนจอ */
+            overflow-x: hidden;
+            /* ป้องกันการเลื่อนแนวนอน */
+            overflow-y: auto;
+            /* อนุญาตให้เลื่อนแนวตั้งได้ */
+        }
+
+        /* แต่ง Scrollbar ให้ดูน่ารักเข้ากับเว็บ */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #fbcfe8;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f472b6;
         }
 
         /* แอนิเมชันตอนเปลี่ยนด่าน (ค่อยๆ เฟดขึ้นมา) */
@@ -93,7 +113,7 @@
 
     <!-- คอนเทนเนอร์หลัก (การ์ดสีขาว) -->
     <div
-        class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl w-full max-w-md p-8 text-center relative overflow-hidden border-2 border-pink-100">
+        class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl w-full max-w-md p-8 text-center relative overflow-y-auto max-h-[90vh] border-2 border-pink-100">
 
         <!-- ========================================== -->
         <!-- ด่านที่ 0: หน้าต้อนรับ -->
@@ -211,9 +231,9 @@
     <script>
         // --- ⚙️ ตั้งค่าคำตอบที่ถูกต้องตรงนี้ ⚙️ ---
         const correctAnswers = {
-            1: ["14026", "14022568"], // ด่าน 1: วันครบรอบ (ใส่ได้หลายแบบเผื่อแฟนพิมพ์คลาดเคลื่อน)
-            2: ["ชาบู", "shabu", "ชาบูชิ", "ตี๋น้อย"], // ด่าน 2: ของกิน (เพิ่มคำตอบที่เป็นไปได้)
-            3: ["เค้าเอง", "ตัวเอง", "หนู", "หนูเอง", "ชื่อแฟน", "ที่รัก"] // ด่าน 3: ใครน่ารักสุด (เปลี่ยน "ชื่อแฟน" เป็นชื่อเล่นแฟนคุณ)
+            1: ["280620", "28062023"], // ด่าน 1: วันครบรอบ (ใส่ได้หลายแบบเผื่อแฟนพิมพ์คลาดเคลื่อน)
+            2: ["ชาบู", "shabu", "ชาบูชิ", "ตี๋น้อย","หมูกะทะ"], // ด่าน 2: ของกิน (เพิ่มคำตอบที่เป็นไปได้)
+            3: ["เค้าเอง", "ตัวเอง", "หนู", "หนูเอง", "ชื่อแฟน", "ที่รัก","เค้า"] // ด่าน 3: ใครน่ารักสุด (เปลี่ยน "ชื่อแฟน" เป็นชื่อเล่นแฟนคุณ)
         };
 
         // ฟังก์ชันสำหรับเช็คคำตอบ
